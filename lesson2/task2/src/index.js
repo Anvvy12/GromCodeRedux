@@ -1,0 +1,29 @@
+import "../styles/index.scss";
+import store, { increment, reset, decrement } from "./store";
+
+const decrementBtn = document.querySelector('[data-action="decrement"]');
+const incrementBtn = document.querySelector('[data-action="increment"]');
+const resetBtn = document.querySelector('[data-action="reset"]');
+const resultItem = document.querySelector(".counter__result");
+
+const onIncrement = () => {
+  store.dispatch(increment());
+};
+const onReset = () => {
+  store.dispatch(reset());
+};
+const onDecrement = () => {
+  store.dispatch(decrement());
+};
+
+incrementBtn.addEventListener("click", onIncrement);
+decrementBtn.addEventListener("click", onDecrement);
+resetBtn.addEventListener("click", onReset);
+
+store.subscribe(() => {
+  const state = store.getState();
+  const currentValue = state.value;
+  const historyString = state.history.join("");
+  resultItem.textContent = `${historyString} = ${currentValue}`;
+  console.log(store.getState());
+});
