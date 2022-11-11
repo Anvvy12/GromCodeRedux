@@ -29,19 +29,16 @@ const counterREduser = (state = initialState, action) => {
     case INCREMENT:
       return {
         ...state,
-        value: state.value + 1,
         history: state.history.concat("+1"),
       };
     case DECREMENT:
       return {
         ...state,
-        value: state.value - 1,
         history: state.history.concat("-1"),
       };
     case RESET:
       return {
         ...state,
-        value: 0,
         history: [],
       };
     default:

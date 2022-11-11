@@ -24,6 +24,6 @@ store.subscribe(() => {
   const state = store.getState();
   const value = state.history.reduce((acc, value) => acc + Number(value), 0);
   const historyString = state.history.join("");
-  resultItem.textContent = `${historyString} = ${value}`;
+  resultItem.textContent = value === 0 ? "" : `${historyString} = ${value}`;
   console.log(store.getState());
 });
