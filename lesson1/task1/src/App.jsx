@@ -4,7 +4,7 @@ import { themes, ThemeContext } from "./themes-context.js";
 
 export default class extends Component {
   state = {
-    theme: themes.dark,
+    theme: themes.light,
   };
   toggle = () => {
     const newTheme =
