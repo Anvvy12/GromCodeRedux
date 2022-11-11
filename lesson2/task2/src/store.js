@@ -22,7 +22,6 @@ export const reset = () => {
 
 const initialState = {
   history: [],
-  value: 0,
 };
 
 const counterREduser = (state = initialState, action) => {
