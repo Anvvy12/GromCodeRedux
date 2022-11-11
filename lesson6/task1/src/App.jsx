@@ -14,6 +14,17 @@ export default class extends Component {
     });
   };
   render() {
+    // return (
+    //   <div>
+    //     <ThemeContext.Provider value={this.state.theme}>
+    //       <ThemedButton onClick={this.toggle}>Dynamic Theme</ThemedButton>
+    //     </ThemeContext.Provider>
+    //     <ThemeContext.Provider>
+    //       <ThemedButton onClick={this.toggle}>Default Theme</ThemedButton>
+    //     </ThemeContext.Provider>
+    //   </div>
+    // );
+
     return (
       <div>
         <ThemeContext.Provider value={this.state.theme}>
