@@ -2,7 +2,7 @@ import { ADD_PRODUCT, DELETE_PRODUCT } from "./cart.actions";
 
 const cart = { products: [] };
 
-const productsReducer = (state = initialState, action) => {
+const productsReducer = (state = cart, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
       return {
