@@ -7,7 +7,7 @@ const productsReducer = (state = initialState, action) => {
     case ADD_PRODUCT:
       return {
         ...state,
-        products: state.cart.concat(action.payload.item),
+        cart: state.cart.concat(action.payload.item),
       };
     case DELETE_PRODUCT:
       const newList = state.cart.filter(
@@ -15,7 +15,7 @@ const productsReducer = (state = initialState, action) => {
       );
       return {
         ...state,
-        products: newList,
+        cart: newList,
       };
     default:
       return state;
