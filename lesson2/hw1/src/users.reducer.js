@@ -1,4 +1,5 @@
 import data from "./store";
+import { ADD_USER, DELETE_USER } from "./users.actions";
 
 const initialState = {
   usersList: [],
