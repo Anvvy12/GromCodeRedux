@@ -24,7 +24,7 @@ const usersReducer = (state = initialState, action) => {
           return { ...user, ...action.payload.userData };
         }
       });
-      return newUsersList;
+      return { ...state, newUsersList };
     default:
       return state;
   }
