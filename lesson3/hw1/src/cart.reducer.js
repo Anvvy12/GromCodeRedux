@@ -10,11 +10,12 @@ const productsReducer = (state = initialState, action) => {
         products: state.products.concat(action.payload.item),
       };
     case DELETE_PRODUCT:
+      const newList = state.products.filter(
+        (product) => product.id !== action.payload.id
+      );
       return {
         ...state,
-        products: state.products.filter(
-          (product) => product.id !== action.payload.id
-        ),
+        products: newList,
       };
     default:
       return state;
