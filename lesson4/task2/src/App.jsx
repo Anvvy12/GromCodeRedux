@@ -1,7 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import { Provider } from "react-redux";
 
-export default class extends Component {
-  render() {
-    return null;
-  }
-}
+const App = () => {
+  return (
+    <Provider>
+      <Users />
+    </Provider>
+  );
+};
+
+export default App;
