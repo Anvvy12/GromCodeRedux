@@ -4,7 +4,7 @@ import { ADD_USER, DELETE_USER } from "./users.actions";
 const initialState = {
   usersList: [],
 };
-const usersReducer = (state = data, action) => {
+const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_USER:
       return {
