@@ -25,3 +25,5 @@ onDeleteUser(7);
 const onUpdateUser = (id, userData) => {
   store.dispatch(updateUser(id, userData));
 };
+
+onUpdateUser(76, { name: "lol" });
