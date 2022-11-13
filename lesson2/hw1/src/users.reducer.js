@@ -1,7 +1,7 @@
 import data from "./store";
 
-const ADD_USER = "ADD_USER";
-const DELETE_USER = "DELETE_USER";
+export const ADD_USER = "ADD_USER";
+export const DELETE_USER = "DELETE_USER";
 
 export const userReducer = (state = data, action, user, id) => {
   switch (action.type) {
