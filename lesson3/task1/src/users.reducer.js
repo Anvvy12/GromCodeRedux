@@ -7,7 +7,6 @@ const initialState = {
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_USER:
-      console.log("a");
       return {
         ...state,
         usersList: state.usersList.concat(action.payload.userData),
