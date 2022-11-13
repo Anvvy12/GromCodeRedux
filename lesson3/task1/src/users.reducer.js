@@ -22,7 +22,7 @@ const usersReducer = (state = initialState, action) => {
     case UPDATE_USER:
       const newUsersList = state.usersList.map((user) => {
         if (user.id === action.payload.userId) {
-          return { ...user, ...action.payload.userDate };
+          return { ...user, ...action.payload.userData };
         }
       });
       return newUsersList;

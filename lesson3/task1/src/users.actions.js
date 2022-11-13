@@ -14,14 +14,12 @@ export const deleteUser = (userId) => {
 export const addUser = (userData) => {
   return {
     type: ADD_USER,
-    payload: {
-      userData,
-    },
+    payload: { userData },
   };
 };
 export const updateUser = (userId, userData) => {
   return {
-    type: ADD_USER,
+    type: UPDATE_USER,
     payload: {
       userId,
       userData,
