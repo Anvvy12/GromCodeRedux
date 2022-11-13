@@ -1,4 +1,4 @@
-import { ADD_USER, DELETE_USER } from "./user.actions";
+import { ADD_USER, REMOVE_USER } from "./user.actions";
 
 const initialState = null;
 
@@ -7,7 +7,7 @@ const userReducer = (state = initialState, action) => {
     case ADD_USER:
       return action.payload.user;
 
-    case DELETE_USER:
+    case REMOVE_USER:
       return null;
     default:
       return state;
