@@ -1,16 +1,22 @@
 import store from "./store";
 import { setLanguage } from "./language.actions";
-import { addProduct, deleteProduct } from "./cart.actions";
 import { setUser, removeUser } from "./user.actions";
+import { addProduct, removeProduct } from "./cart.actions";
 
-store.subscribe(() => console.log(store.getState()));
+// store.subscribe(() => console.log(store.getState()));
 
-store.dispatch(addProduct({ name: "Milk", id: 2 }));
-store.dispatch(addProduct({ name: "Bread", id: 1 }));
-store.dispatch(addProduct({ name: "Egs", id: 3 }));
-store.dispatch(addProduct({ name: "Sigarets", id: 4 }));
-store.dispatch(deleteProduct(2));
+// const user1 = { id: 13, name: "Bob" };
+// const user2 = { id: 12, name: "Leonid" };
 
-store.dispatch(setUser({ name: "Bob" }));
+// store.dispatch(setLanguage("en"));
+// store.dispatch(addProduct({ id: 76, name: "milk" }));
+// store.dispatch(setUser(user1));
+// store.dispatch(removeUser());
 
-store.dispatch(removeUser());
+// let resul = {
+//   language: "en",
+//   user: null,
+//   cart: {
+//     products: [],
+//   },
+// };
