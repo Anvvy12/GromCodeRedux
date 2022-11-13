@@ -14,7 +14,6 @@ const productsReducer = (state = cart, action) => {
         (product) => product.id !== action.payload.id
       );
       return {
-        ...state,
         products: newList,
       };
     default:
