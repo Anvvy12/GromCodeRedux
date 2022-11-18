@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as userActions from "./users.actions";
 
-class Users extends Component {
+className Users extends Component {
   onUserCreate = () => {
     const id = Math.round(Math.random() * 1000000);
     const newUser = {
@@ -15,17 +15,17 @@ class Users extends Component {
   render() {
     const { users, deleteUser } = this.props;
     return (
-      <div className="users">
-        <button onClick={this.onUserCreate} className="users__create-btn">
+      <div classNameName="users">
+        <button onClick={this.onUserCreate} classNameName="users__create-btn">
           Create user
         </button>
-        <ul className="users__list">
+        <ul classNameName="users__list">
           {users.map((user) => (
-            <li key={user.id} className="users__list-item">
+            <li key={user.id} classNameName="users__list-item">
               {user.name}
               <button
                 onClick={() => deleteUser(user.id)}
-                className="users__delete-btn"
+                classNameName="users__delete-btn"
               >
                 +
               </button>

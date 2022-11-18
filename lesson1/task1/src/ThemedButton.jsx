@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { ThemeContext } from "./themes-context";
 
-class ThemedButton extends Component {
+className ThemedButton extends Component {
   render() {
     return (
       <button
         {...this.props}
-        className="btn"
+        classNameName="btn"
         style={{
           color: this.context.fontColor,
           backgroundColor: this.context.backround,

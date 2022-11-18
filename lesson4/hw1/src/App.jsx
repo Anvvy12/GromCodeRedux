@@ -1,7 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import Pagination from "./users/Pagination";
+import UsersList from "./users/UsersList";
 
-export default class extends Component {
-  render() {
-    return null;
-  }
-}
+export default () => {
+  return (
+    <div>
+      <Pagination />
+      <UsersList />
+    </div>
+  );
+};
