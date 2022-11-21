@@ -31,9 +31,10 @@ const options = [
 
 const initialState = {
   optionsList: options,
+  selected: [],
 };
 
-const optionsReducer = (state = options, action) => {
+const optionsReducer = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state;

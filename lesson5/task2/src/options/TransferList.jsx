@@ -5,6 +5,7 @@ const TransferList = () => {
   return (
     <div className="transfer-list">
       <Options title={"Available options"} />
+      <Options title={"Selected options"} />
     </div>
   );
 };

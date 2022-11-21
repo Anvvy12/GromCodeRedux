@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { optionsListSelector } from "./options.selectors";
 
 const Options = ({ title, options }) => {
   return (
@@ -8,7 +9,12 @@ const Options = ({ title, options }) => {
       <ul className="options__list">
         {options.map((option) => (
           <li key={option.id}>
-            <button className="options__list-item">{option.name}</button>
+            <button
+              className="options__list-item"
+              onClick={() => console.log(option.id)}
+            >
+              {option.name}
+            </button>
           </li>
         ))}
       </ul>
@@ -18,7 +24,7 @@ const Options = ({ title, options }) => {
 
 const mapState = (state) => {
   return {
-    options: state.options,
+    options: optionsListSelector(state),
   };
 };
 
