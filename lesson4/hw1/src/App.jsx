@@ -1,6 +1,7 @@
 import React from "react";
-import Pagination from "./users/Pagination";
+import UsersList from "./users/UsersList";
+import store from "./store";
 
 export default () => {
-  return <Pagination />;
+  return <UsersList />;
 };

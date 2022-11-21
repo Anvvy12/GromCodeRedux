@@ -1,11 +1,15 @@
 import React from "react";
 import User from "./User";
+import Pagination from "./Pagination";
 
 const UsersList = () => {
   return (
-    <ul>
-      <User />
-    </ul>
+    <div>
+      <Pagination />
+      <ul>
+        <User />
+      </ul>
+    </div>
   );
 };
 
