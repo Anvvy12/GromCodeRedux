@@ -1,5 +1,12 @@
 import React from "react";
+import ConectedUserList from "./users/UsersList";
+import { Provider } from "react-redux";
+import store from "./store";
 
-const App = () => {
-  return null;
+export default () => {
+  return (
+    <Provider store={store}>
+      <ConectedUserList />
+    </Provider>
+  );
 };
