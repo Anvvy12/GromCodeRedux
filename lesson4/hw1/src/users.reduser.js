@@ -1,4 +1,4 @@
-import { PREVIOUS_PAGE, NEST_PAGE } from "./actions";
+import { GO_NEXT, GO_PREV } from "./users.actions";
 
 const initialState = {
   users: {
@@ -65,12 +65,12 @@ const initialState = {
 
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case NEST_PAGE:
+    case GO_NEXT:
       return {
         ...state,
       };
 
-    case PREVIOUS_PAGE:
+    case GO_PREV:
       return {
         ...state,
       };
