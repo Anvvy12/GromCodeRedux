@@ -1,7 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
+import TransferList from "./options/TransferList";
+import { Provider } from "react-redux";
+import store from "./store";
 
-export default className extends Component {
-  render() {
-    return null;
-  }
-}
+const App = () => {
+  return (
+    <Provider store={store}>
+      <TransferList />
+    </Provider>
+  );
+};
+
+export default App;
