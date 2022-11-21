@@ -1,6 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-import { optionsListSelector } from "./options.selectors";
 
 const Options = ({ title, options }) => {
   return (
@@ -22,10 +20,4 @@ const Options = ({ title, options }) => {
   );
 };
 
-const mapState = (state) => {
-  return {
-    options: optionsListSelector(state),
-  };
-};
-
-export default connect(mapState)(Options);
+export default Options;
