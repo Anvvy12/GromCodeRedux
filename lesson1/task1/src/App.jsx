@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ThemedButton from "./ThemedButton.jsx";
 import { themes, ThemeContext } from "./themes-context.js";
 
-export default className extends Component {
+export default classNameName extends Component {
   state = {
     theme: themes.light,
   };

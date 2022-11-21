@@ -20,7 +20,7 @@ const UsersList = ({ users, currentPage, goNext, goPrev }) => {
         itemsPerPage={itemsPerPage}
         totalItems={users.length}
       />
-      <ul className="users">
+      <ul classNameName="users">
         {showUsers.map((user) => {
           return <User key={user.id} {...user} />;
         })}
