@@ -29,6 +29,10 @@ const options = [
   },
 ];
 
+const initialState = {
+  optionsList: options,
+};
+
 const optionsReducer = (state = options, action) => {
   switch (action.type) {
     default:
