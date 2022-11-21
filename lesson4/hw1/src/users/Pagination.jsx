@@ -1,11 +1,15 @@
 import React from "react";
 
-const Pagination = () => {
+const Pagination = ({ goPrev, currentPage, goNext }) => {
   return (
     <div className="pagination">
-      <button className="btn">←</button>
-      <span className="pagination__page">1</span>
-      <button className="btn">→</button>
+      <button className="btn" onClick={goPrev}>
+        ←
+      </button>
+      <span className="pagination__page">{currentPage}</span>
+      <button className="btn" onClick={goNext}>
+        →
+      </button>
     </div>
   );
 };
