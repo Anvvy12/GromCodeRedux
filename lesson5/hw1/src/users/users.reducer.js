@@ -60,3 +60,10 @@ const users = {
 };
 
 const initialState = users;
+
+const usersFilterReducer = (state = initialState, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
