@@ -3,14 +3,14 @@ import { connect } from "react-redux";
 import * as counterActions from "./counter.actions";
 const Counter = ({ counter, increment, decrement, reset }) => {
   return (
-    <div classNameNameName="counter">
-      <button classNameNameName="counter__button" onClick={decrement}>
+    <div classNameNameNameName="counter">
+      <button classNameNameNameName="counter__button" onClick={decrement}>
         -
       </button>
-      <span classNameNameName="counter__value" onClick={reset}>
+      <span classNameNameNameName="counter__value" onClick={reset}>
         {counter}
       </span>
-      <button classNameNameName="counter__button" onClick={increment}>
+      <button classNameNameNameName="counter__button" onClick={increment}>
         +
       </button>
     </div>

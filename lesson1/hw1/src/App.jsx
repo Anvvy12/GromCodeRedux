@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import { UserContext } from "./userInfo";
 
-export default classNameName extends Component {
+export default classNameNameName extends Component {
   state = {
     userData: {
       name: "Nikola Tesla",
@@ -11,7 +11,7 @@ export default classNameName extends Component {
   };
   render() {
     return (
-      <div classNameNameName="page">
+      <div classNameNameNameName="page">
         <UserContext.Provider value={this.state.userData}>
           <Header />
         </UserContext.Provider>

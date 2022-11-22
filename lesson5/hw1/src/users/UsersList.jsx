@@ -6,7 +6,7 @@ const UsersList = () => {
   return (
     <div>
       <Filter />
-      <ul class="users">
+      <ul className="users">
         <User />
       </ul>
     </div>

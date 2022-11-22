@@ -1,3 +1,5 @@
+import { FILTER } from "./users.actions";
+
 const users = {
   filterText: "",
   usersList: [
@@ -63,7 +65,14 @@ const initialState = users;
 
 const usersFilterReducer = (state = initialState, action) => {
   switch (action.type) {
+    case FILTER:
+      return {
+        ...state,
+        value: state.filterText.concat(action.payload.value),
+      };
     default:
       return state;
   }
 };
+
+export default usersFilterReducer;

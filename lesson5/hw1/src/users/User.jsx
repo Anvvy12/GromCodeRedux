@@ -1,12 +1,20 @@
 import React from "react";
+import { connect } from "react-redux";
 
 const User = () => {
   return (
-    <li class="user">
-      <span class="user__name">Tad</span>
-      <span class="user__age">18</span>
+    <li className="user">
+      <span className="user__name">Tad</span>
+      <span className="user__age">18</span>
     </li>
   );
 };
 
-export default User;
+const mapState = () => {
+  return null;
+};
+
+const mapDispatch = () => {
+  return null;
+};
+export default connect(mapState, mapDispatch)(User);

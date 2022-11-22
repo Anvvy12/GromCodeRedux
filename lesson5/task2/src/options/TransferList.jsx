@@ -5,7 +5,7 @@ import SelectedOption from "./SelectedOption";
 
 const TransferList = () => {
   return (
-    <div className="transfer-list">
+    <div classNameName="transfer-list">
       <AvailableOption title={"Available options"} />
       <SelectedOption title={"Selected options"} />
     </div>
