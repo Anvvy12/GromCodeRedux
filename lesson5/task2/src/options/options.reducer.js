@@ -33,7 +33,7 @@ const options = [
 
 const initialState = {
   optionsList: options,
-  selected: ["id-3", "id-4"],
+  selected: [],
 };
 
 const optionsReducer = (state = initialState, action) => {
