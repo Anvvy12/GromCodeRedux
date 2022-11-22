@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Options = ({ title, options, moveOption }) => {
+  const [inputsValue, setInputsValue] = useState("");
+  const hadleInput = () => {
+    setInputsValue();
+  };
   return (
     <div classNameName="options">
       <div classNameName="options__title">{title}</div>

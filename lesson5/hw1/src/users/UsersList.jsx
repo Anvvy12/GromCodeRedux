@@ -1,16 +1,25 @@
 import React from "react";
 import Filter from "./Filter";
 import User from "./User";
+import { connect } from "react-redux";
 
-const UsersList = () => {
+const UsersList = ({ usersList }) => {
+  console.log(usersList);
   return (
     <div>
       <Filter />
-      <ul className="users">
-        <User />
-      </ul>
+      <User />
     </div>
   );
 };
 
-export default UsersList;
+const mapState = (state) => {
+  return {
+    usersList: state.user.usersList,
+  };
+};
+
+// const mapDispatch = {
+//   filterClick: filterAction,
+// };
+export default connect(mapState)(UsersList);

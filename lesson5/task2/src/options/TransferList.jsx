@@ -1,5 +1,4 @@
 import React from "react";
-import Options from "./Options";
 import AvailableOption from "./AvailableOption";
 import SelectedOption from "./SelectedOption";
 

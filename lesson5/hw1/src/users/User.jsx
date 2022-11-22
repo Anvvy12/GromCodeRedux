@@ -1,20 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const User = () => {
+const User = ({ usersList }) => {
   return (
-    <li className="user">
-      <span className="user__name">Tad</span>
-      <span className="user__age">18</span>
-    </li>
+    <ul className="users">
+      {usersList.map(({ id, name, age }) => (
+        <li className="user" key={id}>
+          <span className="user__name">{name}</span>
+          <span className="user__age">{age}</span>
+        </li>
+      ))}
+    </ul>
   );
 };
 
-const mapState = () => {
-  return null;
+const mapState = (state) => {
+  return {
+    usersList: state.user.usersList,
+  };
 };
 
-const mapDispatch = () => {
-  return null;
-};
-export default connect(mapState, mapDispatch)(User);
+// const mapDispatch = {
+//   filterClick: filterAction,
+// };
+export default connect(mapState)(User);
