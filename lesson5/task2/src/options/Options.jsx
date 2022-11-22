@@ -1,6 +1,6 @@
 import React from "react";
 
-const Options = ({ title, options }) => {
+const Options = ({ title, options, moveOption }) => {
   return (
     <div className="options">
       <div className="options__title">{title}</div>
@@ -9,7 +9,7 @@ const Options = ({ title, options }) => {
           <li key={option.id}>
             <button
               className="options__list-item"
-              onClick={() => console.log(option.id)}
+              onClick={() => moveOption(option.id)}
             >
               {option.name}
             </button>
