@@ -68,7 +68,9 @@ const usersFilterReducer = (state = initialState, action) => {
     case FILTER:
       return {
         ...state,
-        filterText: String(state.filterText.split(" ").concat(value)),
+        filterText: String(
+          state.filterText.split(" ").concat(action.payload.value)
+        ),
       };
     default:
       return state;

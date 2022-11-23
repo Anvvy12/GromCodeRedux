@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { filtersValueSelector } from "./users.actions";
+import { filterAction } from "./users.actions";
 
-const Filter = () => {
-  const [inputsValue, setInputsValue] = useState("");
-  const hadleInput = (event) => {
-    setInputsValue(event.target.value);
-  };
+const Filter = ({ filterClick, actualValue, filterText }) => {
+  // const [inputsValue, setInputsValue] = useState("");
+  // const hadleInput = (event) => {
+  //   setInputsValue(event.target.value);
+  // };
+  console.dir(actualValue);
 
   return (
     <div>
@@ -15,8 +16,8 @@ const Filter = () => {
         <input
           type="text"
           className="filter__input"
-          value={inputsValue}
-          onChange={() => hadleInput(event)}
+          value={filterText}
+          onChange={() => filterClick(event)}
         />
       </div>
     </div>
@@ -25,7 +26,8 @@ const Filter = () => {
 
 const mapState = (state) => {
   return {
-    usersList: state.user.usersList,
+    filterText: state.user.filterText,
+    actualValue: state.user.filterText,
   };
 };
 
