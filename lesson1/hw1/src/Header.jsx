@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import UserMenu from "./UserMenu";
 
-classNameNameName Header extends Component {
+classNameNameNameName Header extends Component {
   render() {
     return (
-      <header classNameNameNameName="header">
+      <header classNameNameNameNameName="header">
         <UserMenu />
       </header>
     );

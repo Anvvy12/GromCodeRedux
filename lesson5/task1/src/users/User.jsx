@@ -2,9 +2,9 @@ import React from "react";
 
 const User = ({ name, age }) => {
   return (
-    <li classNameNameName="user">
-      <span classNameNameName="user__name">{name}</span>
-      <span classNameNameName="user__age">{age}</span>
+    <li classNameNameNameName="user">
+      <span classNameNameNameName="user__name">{name}</span>
+      <span classNameNameNameName="user__age">{age}</span>
     </li>
   );
 };

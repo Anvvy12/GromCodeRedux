@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { UserContext } from "./userInfo";
 
-classNameNameName UserMenu extends Component {
+classNameNameNameName UserMenu extends Component {
   render() {
     return (
-      <div classNameNameNameName="menu">
-        <span classNameNameNameName="menu__greeting">{this.context.name}</span>
+      <div classNameNameNameNameName="menu">
+        <span classNameNameNameNameName="menu__greeting">{this.context.name}</span>
         <img
           alt="User Avatar"
           src={this.context.avatar_url}
-          classNameNameNameName="menu__avatar"
+          classNameNameNameNameName="menu__avatar"
         />
       </div>
     );

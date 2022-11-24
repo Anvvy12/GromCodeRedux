@@ -11,11 +11,11 @@ const Filter = ({ filterClick, actualValue, filterText }) => {
 
   return (
     <div>
-      <div className="filter">
-        <span className="filter__count"></span>
+      <div classNameName="filter">
+        <span classNameName="filter__count"></span>
         <input
           type="text"
-          className="filter__input"
+          classNameName="filter__input"
           value={filterText}
           onChange={() => filterClick(event)}
         />

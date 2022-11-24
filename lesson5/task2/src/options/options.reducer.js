@@ -1,4 +1,4 @@
-import { togglOption, TOGGLE_OPTION } from "./options.actions";
+import { TOGGLE_OPTION } from "./options.actions";
 
 const options = [
   {
