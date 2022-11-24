@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default classNameNameName extends Component {
-  render() {
-    return null;
-  }
-}
+const App = () => {
+  return null;
+};
+
+export default App;
