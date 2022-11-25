@@ -10,11 +10,11 @@ const logger = (state) => (next) => (action) => {
   console.groupEnd();
 };
 
-// const reducers = combineReducers({ users: userReducer });
+const reducers = combineReducers({ users: userReducer });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  userReducer,
+  reducers,
   composeEnhancers(applyMiddleware(thunk, logger))
 );
 
