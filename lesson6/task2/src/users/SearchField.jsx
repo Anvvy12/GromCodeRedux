@@ -11,6 +11,7 @@ const SearchField = ({ fetchUserData }) => {
 
   const handleUserSearch = () => {
     fetchUserData(userName);
+    setUserName("");
   };
   return (
     <div className="name-form">
@@ -18,7 +19,7 @@ const SearchField = ({ fetchUserData }) => {
         type="text"
         className="name-form__input"
         value={userName}
-        onChange={() => onChange(event)}
+        onChange={onChange}
       />
       <button className="name-form__btn btn" onClick={handleUserSearch}>
         Show
