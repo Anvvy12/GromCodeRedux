@@ -1,6 +1,6 @@
 import { SHOW_SPINNER, USER_DATA_RESIVED } from "./user.actions";
 const users = {
-  usersData: null,
+  userData: null,
   isFetching: false,
 };
 
