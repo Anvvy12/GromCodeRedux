@@ -1,5 +1,5 @@
 export const SHOW_SPINNER = "SHOW_SPINNER";
-export const USER_DATA_RESIVED = "USER_DATA_RESIVED";
+export const USER_DATA_RECIVED = "USER_DATA_RECIVED";
 import fetchUserDataV1 from "./users.gateway";
 
 export const showSpinner = () => {
@@ -10,7 +10,7 @@ export const showSpinner = () => {
 
 export const userDataResived = (userData) => {
   return {
-    type: USER_DATA_RESIVED,
+    type: USER_DATA_RECIVED,
     payload: {
       userData,
     },
