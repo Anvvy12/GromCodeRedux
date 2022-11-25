@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import * as userActions from "./user.actions";
 
-const SearchField = () => {
+const SearchField = ({ fetchUserData }) => {
+  const [userName, setUserName] = useState("");
+
+  const onChange = (event) => {
+    setUserName(event.target.value);
+  };
+
+  const handleUserSearch = () => {
+    fetchUserData(userName);
+  };
   return (
     <div className="name-form">
-      <input type="text" className="name-form__input" />
-      <button className="name-form__btn btn">Show</button>
+      <input
+        type="text"
+        className="name-form__input"
+        value={userName}
+        onChange={() => onChange(event)}
+      />
+      <button className="name-form__btn btn" onClick={handleUserSearch}>
+        Show
+      </button>
     </div>
   );
 };
 
-export default SearchField;
+const mapDispatch = {
+  fetchUserData: userActions.fetchUserData,
+};
+
+export default connect(null, mapDispatch)(SearchField);
