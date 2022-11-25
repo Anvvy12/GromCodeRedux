@@ -4,22 +4,37 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 32px;
 }
 
 #root {
-  height: 100vh;
   display: flex;
+  height: 100vh;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.btn {
-  height: 32px;
-  border: 3px solid #ccc;
-  outline: none;
-  cursor: pointer;
-  border-radius: 8px;
-  margin: 16px;
-  font-size: 18px;
+.weather {
+  width: 100%;
+  max-width: 300px;
+
+  &__title {
+    word-spacing: 16px;
+    font-weight: 300;
+  }
+}
+
+.cities-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.city {
+  display: flex;
+  line-height: 32px;
+
+  &__temperature {
+    margin-left: auto;
+  }
 }

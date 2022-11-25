@@ -1,7 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
+import { Provider } from "react-redux";
+import Weather from "./weather/Weather";
+import store from "./store";
 
-export default classNameNameNameName extends Component {
-  render() {
-    return null;
-  }
-}
+const App = () => {
+  return (
+    <Provider store={store}>
+      <Weather />
+    </Provider>
+  );
+};
+
+export default App;
