@@ -1,6 +1,6 @@
 const baseUrl = "https://api.github.com/users";
 
-const fetchUserDataV1 = (userName) => {
+const getUserData = (userName) => {
   return fetch(`${baseUrl}/${userName}`).then((response) => {
     if (response.ok) {
       return response.json();
@@ -9,4 +9,4 @@ const fetchUserDataV1 = (userName) => {
   });
 };
 
-export default fetchUserDataV1;
+export default getUserData;
