@@ -5,7 +5,7 @@ const getUserData = (userName) => {
     if (response.ok) {
       return response.json();
     }
-    throw new Error("bad reuest");
+    throw new Error();
   });
 };
 
