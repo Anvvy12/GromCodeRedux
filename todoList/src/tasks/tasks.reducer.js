@@ -1,15 +1,22 @@
-import { ADD_TASK } from "./tasks.actions";
-import {
-  createTask,
-  fetchTasksList,
-  updateTask,
-  deleteTask,
-} from "./tasks.gateway";
+import { ADD_TASK, TASK_LIST_RESIVED, DELETE_TASK } from "./tasks.actions";
 
-const initialState = {};
+const initialState = {
+  tasksList: [],
+};
 
 const tasksReducer = (state = initialState, action) => {
   switch (action.type) {
+    case TASK_LIST_RESIVED:
+      return {
+        ...state,
+        tasksList: action.payload.tasks,
+      };
+    case DELETE_TASK: {
+      return {
+        ...state,
+        tasksList: action.payload.tasks,
+      };
+    }
     default:
       return state;
   }
