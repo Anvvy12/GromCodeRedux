@@ -45,13 +45,6 @@ body {
   }
 
   &_done {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    border-radius: 8px;
-    background-color: wheat;
-    margin-bottom: 8px;
-    padding: 8px;
     opacity: 0.7;
 
     .list-item__text {
