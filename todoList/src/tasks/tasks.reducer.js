@@ -1,4 +1,10 @@
 import { ADD_TASK } from "./tasks.actions";
+import {
+  createTask,
+  fetchTasksList,
+  updateTask,
+  deleteTask,
+} from "./tasks.gateway";
 
 const initialState = {};
 
