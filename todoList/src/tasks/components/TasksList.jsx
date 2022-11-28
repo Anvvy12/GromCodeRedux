@@ -7,7 +7,7 @@ import {
   fetchTasksList,
   updateTask,
   deleteTask,
-} from "./TasksGateWay";
+} from "../TasksGateWay";
 
 class TasksList extends React.Component {
   state = {
