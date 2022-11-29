@@ -7,7 +7,6 @@ export const TASK_LIST_RESIVED = "TASK/TASK_LIST_RESIVED";
 export const DELETE_TASK = "TASK/DELETE_TASK";
 
 export const taskListResivedAction = (tasks) => {
-  console.log(tasks);
   return {
     type: TASK_LIST_RESIVED,
     payload: {
@@ -58,17 +57,8 @@ export const updateTaskList = (id) => {
 };
 
 export const deleteTaskCurrentTask = (id) => {
-  return function (dispatch, getState) {
-    const state = getState();
-    const taskList = getTasksListSelector(state);
-    console.log(taskList);
-    const task = taskList.find((task) => task.id === id);
-    const updateTask = {
-      ...task,
-      done: !task.done,
-    };
-    console.log(updateTask);
-    gateWay.updateTask(id, updateTask).then(() => dispatch(getTaskList()));
+  return function (dispatch) {
+    gateWay.deleteTask(id).then(() => dispatch(getTaskList()));
   };
 };
 

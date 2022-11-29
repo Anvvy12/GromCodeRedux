@@ -2,7 +2,7 @@ import React from "react";
 import Task from "./Task";
 import CreateTaskInput from "./CreateTaskInput";
 import { connect } from "react-redux";
-import { createTask, deleteTask } from "../tasks.gateway";
+import { createTask } from "../tasks.gateway";
 import { getTasksListSelector } from "../tasks.selectors";
 import * as taskActions from "../tasks.actions";
 
@@ -19,10 +19,6 @@ class TasksList extends React.Component {
     createTask(newTask).then(() => this.fetchTasks());
   };
 
-  handleTaskDelete = (id) => {
-    deleteTask(id).then(() => this.fetchTasks());
-  };
-
   render() {
     const sortedList = this.props.tasks;
     return (
@@ -34,7 +30,7 @@ class TasksList extends React.Component {
               key={task.id}
               {...task}
               onChange={this.props.updateTaskList}
-              onDelete={this.handleTaskDelete}
+              onDelete={this.props.deleteTaskCurrentTask}
             />
           ))}
         </ul>
@@ -46,6 +42,7 @@ class TasksList extends React.Component {
 const mapDispatch = {
   getTaskList: taskActions.getTaskList,
   updateTaskList: taskActions.updateTaskList,
+  deleteTaskCurrentTask: taskActions.deleteTaskCurrentTask,
 };
 const mapState = (state) => {
   return { tasks: getTasksListSelector(state) };
