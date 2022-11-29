@@ -15,24 +15,6 @@ export const taskListResivedAction = (tasks) => {
   };
 };
 
-export const addTaskAction = (newTask) => {
-  return {
-    type: ADD_TASK,
-    payload: {
-      newTask,
-    },
-  };
-};
-
-export const deleteCurrentTaskAction = (id) => {
-  return {
-    type: DELETE_TASK,
-    payload: {
-      id,
-    },
-  };
-};
-
 export const getTaskList = () => {
   return function (dispatch) {
     gateWay
@@ -45,25 +27,26 @@ export const updateTaskList = (id) => {
   return function (dispatch, getState) {
     const state = getState();
     const taskList = getTasksListSelector(state);
-    console.log(taskList);
     const task = taskList.find((task) => task.id === id);
     const updateTask = {
       ...task,
       done: !task.done,
     };
-    console.log(updateTask);
     gateWay.updateTask(id, updateTask).then(() => dispatch(getTaskList()));
   };
 };
 
-export const deleteTaskCurrentTask = (id) => {
+export const deleteCurrentTask = (id) => {
   return function (dispatch) {
     gateWay.deleteTask(id).then(() => dispatch(getTaskList()));
   };
 };
-
-// export const deleteTaskAction = () => {
-//   return function (dispatch) {
-//     deleteTask(id).then(() => dispatch(getTaskListAction()));
-//   };
-// };
+export const createNewTask = (text) => {
+  return function (dispatch) {
+    const taskData = {
+      text,
+      done: false,
+    };
+    gateWay.createTask(taskData).then(() => dispatch(getTaskList()));
+  };
+};

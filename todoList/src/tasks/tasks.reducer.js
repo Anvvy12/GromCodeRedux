@@ -9,7 +9,7 @@ const tasksReducer = (state = initialState, action) => {
     case TASK_LIST_RESIVED:
       return {
         ...state,
-        tasksList: action.payload.tasks.sort((a, b) => a.done - b.done),
+        tasksList: action.payload.tasks,
       };
     case DELETE_TASK: {
       return {
