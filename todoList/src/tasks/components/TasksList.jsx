@@ -2,8 +2,9 @@ import React from "react";
 import Task from "./Task";
 import CreateTaskInput from "./CreateTaskInput";
 import { connect } from "react-redux";
-import { createTask, updateTask, deleteTask } from "../tasks.gateway";
+import { createTask, deleteTask } from "../tasks.gateway";
 import { getTasksListSelector } from "../tasks.selectors";
+import * as taskActions from "../tasks.actions";
 
 class TasksList extends React.Component {
   componentDidMount() {
@@ -18,22 +19,12 @@ class TasksList extends React.Component {
     createTask(newTask).then(() => this.fetchTasks());
   };
 
-  handleTaskStatusChange = (id) => {
-    const { done, text } = this.state.tasks.find((task) => task.id === id);
-    const updatedTask = {
-      text,
-      done: !done,
-    };
-
-    updateTask(id, updatedTask).then(() => this.fetchTasks());
-  };
-
   handleTaskDelete = (id) => {
     deleteTask(id).then(() => this.fetchTasks());
   };
 
   render() {
-    const sortedList = this.props.taskList;
+    const sortedList = this.props.tasks;
     return (
       <div className="todo-list">
         <CreateTaskInput onCreate={this.onCreate} />
@@ -42,7 +33,7 @@ class TasksList extends React.Component {
             <Task
               key={task.id}
               {...task}
-              onChange={this.handleTaskStatusChange}
+              onChange={this.props.updateTaskList}
               onDelete={this.handleTaskDelete}
             />
           ))}
@@ -53,10 +44,11 @@ class TasksList extends React.Component {
 }
 
 const mapDispatch = {
-  getTaskList: getTasksListSelector,
+  getTaskList: taskActions.getTaskList,
+  updateTaskList: taskActions.updateTaskList,
 };
 const mapState = (state) => {
-  return { taskList: state.tasksList.tasksList };
+  return { tasks: getTasksListSelector(state) };
 };
 
 export default connect(mapState, mapDispatch)(TasksList);

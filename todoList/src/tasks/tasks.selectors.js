@@ -1,3 +1,1 @@
-import * as taskActions from "./tasks.actions";
-
-export const getTasksListSelector = () => taskActions.getTaskListAction();
+export const getTasksListSelector = (state) => state.tasks.tasksList;

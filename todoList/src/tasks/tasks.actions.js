@@ -1,15 +1,13 @@
-import {
-  createTask,
-  fetchTasksList,
-  updateTask,
-  deleteTask,
-} from "./tasks.gateway";
+import * as gateWay from "./tasks.gateway";
+
+import { getTasksListSelector } from "./tasks.selectors";
 
 export const ADD_TASK = "TASK/ADD_TASK";
 export const TASK_LIST_RESIVED = "TASK/TASK_LIST_RESIVED";
 export const DELETE_TASK = "TASK/DELETE_TASK";
 
-export const taskListResived = (tasks) => {
+export const taskListResivedAction = (tasks) => {
+  console.log(tasks);
   return {
     type: TASK_LIST_RESIVED,
     payload: {
@@ -18,7 +16,7 @@ export const taskListResived = (tasks) => {
   };
 };
 
-export const addTask = (newTask) => {
+export const addTaskAction = (newTask) => {
   return {
     type: ADD_TASK,
     payload: {
@@ -27,7 +25,7 @@ export const addTask = (newTask) => {
   };
 };
 
-export const deleteCurrentTask = (id) => {
+export const deleteCurrentTaskAction = (id) => {
   return {
     type: DELETE_TASK,
     payload: {
@@ -36,9 +34,41 @@ export const deleteCurrentTask = (id) => {
   };
 };
 
-export const getTaskListAction = () => {
+export const getTaskList = () => {
   return function (dispatch) {
-    fetchTasksList().then((taskList) => dispatch(taskListResived(taskList)));
+    gateWay
+      .fetchTasksList()
+      .then((taskList) => dispatch(taskListResivedAction(taskList)));
+  };
+};
+
+export const updateTaskList = (id) => {
+  return function (dispatch, getState) {
+    const state = getState();
+    const taskList = getTasksListSelector(state);
+    console.log(taskList);
+    const task = taskList.find((task) => task.id === id);
+    const updateTask = {
+      ...task,
+      done: !task.done,
+    };
+    console.log(updateTask);
+    gateWay.updateTask(id, updateTask).then(() => dispatch(getTaskList()));
+  };
+};
+
+export const deleteTaskCurrentTask = (id) => {
+  return function (dispatch, getState) {
+    const state = getState();
+    const taskList = getTasksListSelector(state);
+    console.log(taskList);
+    const task = taskList.find((task) => task.id === id);
+    const updateTask = {
+      ...task,
+      done: !task.done,
+    };
+    console.log(updateTask);
+    gateWay.updateTask(id, updateTask).then(() => dispatch(getTaskList()));
   };
 };
 
